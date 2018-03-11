@@ -1,0 +1,10 @@
+- Locate the pixels with a value of "1" (e.g. array[x][y]).
+- Check whether there are rows above, beneath or to the sides of said pixel.
+- Check whether the pixels adjacent to said pixel in these rows have a value of 1.
+- If yes, leave unchanged; if not, change the value of adjacent pixels to 1.
+
+Said pixel location: array[x][y]
+Pixel above: array[x-1][y]
+Pixel below: array[x+1][y]
+Pixel on Left: array[x][y-1]
+Pixel on Right: array[x][y+1]

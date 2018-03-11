@@ -1,0 +1,4 @@
+PROJECT IDEAS
+
+* Re-code "Don't Be Short App" and place on an actual domain :)
+* Recreate Raising Smart Girls in Ruby

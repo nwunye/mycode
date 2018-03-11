@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Firehose Project Javascript</title>
+  <link rel="stylesheet" href="FHPJS.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <script>
+
+    // CHANGING HTML ELEMENT - BELOW
+
+    // var mySurprise = function() { 
+    //   var target = $('.surprise');
+
+    //   var onClickFunction = function() {
+    //     target.html("BOOOOO!!!!!!");
+    //     };
+    //   target.click(onClickFunction);
+    //   };
+
+    // $(mySurprise);
+
+    // UPDATING NUMBER OF CLICKS - below
+
+    // $(function() { 
+    //   var target = $('.surprise');
+
+    //     var times = 0;
+
+    //       target.html("I've been clicked " + times + " times in this session; wanna click me again?");     
+      
+    //         target.click(function() {
+    //           times = times + 1;
+    //           target.html("I've been clicked " + times + " times in this session; wanna click me again?");
+    //         });
+    //       });
+
+// Incorporating AJAX GET REQUEST - below
+
+    // $(function() { 
+    //   var target = $('.surprise');
+    
+    //     target.click(function() {
+    //       $.get("http://www.catfact.info/api/v1facts.json?page=1&per_page=3", function(data) {
+    //         var detail = data.facts[0].details;
+    //           target.html(detail);
+    //           });
+    //       });
+    //   });
+
+  // Incorporating AJAX Post Request - below
+ 
+ $(function() {
+    var button = $('#button');
+
+    button.click(function() {
+      var entry = $('#contribution').val();
+      var fact = {
+        "fact" : {
+          "details" : entry
+        }
+      };
+        $.post( "http://www.catfact.info/api/v1/facts.json", fact, function(data) {
+            console.log(data);
+            // $( ".result" ).html( data );
+          });
+    });
+  });
+
+
+  </script>
+
+
+  <h1>Hello!</h1>
+  <h2 class="surprise">Pleased to meet you!</h2>
+  <hr />
+  <label>Add A Cat Fact to the Database:</label><br />
+  <input id="contribution" type="text" size="50" /><br /><br />
+  <button id="button">ADD YOUR FACT</button>
+
+</body>
+</html>
