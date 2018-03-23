@@ -19,33 +19,42 @@ class Stack
     end
 
     def pop
-        @data.value
         @data = @data.next_node
     end
-
 end
 
 
-stack = Stack.new
-stack.push(100)
-stack.push(200)
-stack.push(300)
-stack.push(400)
+def reverse_list(input, fresh=Stack.new)
+    while input.data
+        fresh.push(input.data.value)
+        input.pop
+    end
 
-puts stack.data.value # gives the top value in the stack
+    return fresh
+end
 
-stack.pop # gets rid of the top value in the stack
-# don't know how to define "pop" so that when I "puts" it, it gives the popped-off value
-
-puts stack.data.value
-
-stack.push(500)
-
-puts stack.data.value
-
-
-
-
-
+def print_values(entry)
+    first = entry.data
+    print "#{first.value} --> "
+    node = first.next_node
+        while node
+            print "#{node.value} --> "
+            node = node.next_node
+        end
+    print "nil\n"
+end
 
 
+stack1 = Stack.new
+stack1.push(100)
+stack1.push(200)
+stack1.push(300)
+stack1.push(400)
+
+puts
+print_values(stack1)
+puts "-------------"
+revlist = reverse_list(stack1)
+print_values(revlist)
+puts "Whoop Whoop!!! LOL :D "
+puts
