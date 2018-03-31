@@ -24,37 +24,33 @@ class Stack
 end
 
 
-def reverse_list(input, fresh=Stack.new)
-    while input.data
-        fresh.push(input.data.value)
-        input.pop
+def reverse_list(list)
+    # add code here
+    newnode1 = LinkedListNode.new(list.value)
+    while list
+        # add code here
+        node = LinkedListNode.new(list.value, newnode1)
+        list = list.next_node
     end
-
-    return fresh
-end
-
-def print_values(entry)
-    first = entry.data
-    print "#{first.value} --> "
-    node = first.next_node
-        while node
-            print "#{node.value} --> "
-            node = node.next_node
-        end
-    print "nil\n"
+    # add code here
+    return list
 end
 
 
-stack1 = Stack.new
-stack1.push(100)
-stack1.push(200)
-stack1.push(300)
-stack1.push(400)
+def print_values(list_node)
+    if list_node
+        print "#{list_node.value} --> "
+        print_values(list_node.next_node)
+    else
+        print "nil\n"
+    end
+end
 
-puts
-print_values(stack1)
-puts "-------------"
-revlist = reverse_list(stack1)
+
+node1 = LinkedListNode.new(1)
+node2 = LinkedListNode.new(2,node1)
+node3 = LinkedListNode.new(3,node2)
+
+print_values(node3)
+revlist = reverse_list(node3)
 print_values(revlist)
-puts "Whoop Whoop!!! LOL :D "
-puts
