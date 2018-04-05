@@ -36,6 +36,15 @@ def reverse_list(list)
     return stack.data
 end
 
+def mutate_list(list, previous=nil)
+    while list
+        node = LinkedListNode.new(list.value, previous)
+        previous = node
+        list = list.next_node
+    end
+    return node
+end
+
 
 def print_values(list_node)
     if list_node
@@ -51,8 +60,16 @@ node1 = LinkedListNode.new(1)
 node2 = LinkedListNode.new(2,node1)
 node3 = LinkedListNode.new(3,node2)
 
+puts "Reversing List With Stack"
+print "Old: "
 print_values(node3)
 revlist = reverse_list(node3)
+print "New: "
 print_values(revlist)
-
-
+puts "=========================="
+puts "Reversing List Without Stack"
+print "Old: "
+print_values(node3)
+mutated = mutate_list(node3)
+print "New: "
+print_values(mutated)
