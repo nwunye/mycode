@@ -56,11 +56,11 @@ def print_values(list_node)
 end
 
 
-node1 = LinkedListNode.new(1)
-node2 = LinkedListNode.new(2,node1)
-node3 = LinkedListNode.new(3,node2)
-node4 = LinkedListNode.new(4,node3)
-node5 = LinkedListNode.new(5,node4)
+# node1 = LinkedListNode.new(1)
+# node2 = LinkedListNode.new(2,node1)
+# node3 = LinkedListNode.new(3,node2)
+# node4 = LinkedListNode.new(4,node3)
+# node5 = LinkedListNode.new(5,node4)
 
 # puts "Reversing List With Stack"
 # print "Old: "
