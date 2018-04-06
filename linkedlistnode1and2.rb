@@ -59,17 +59,19 @@ end
 node1 = LinkedListNode.new(1)
 node2 = LinkedListNode.new(2,node1)
 node3 = LinkedListNode.new(3,node2)
+node4 = LinkedListNode.new(4,node3)
+node5 = LinkedListNode.new(5,node4)
 
-puts "Reversing List With Stack"
-print "Old: "
-print_values(node3)
-revlist = reverse_list(node3)
-print "New: "
-print_values(revlist)
-puts "=========================="
-puts "Reversing List Without Stack"
-print "Old: "
-print_values(node3)
-mutated = mutate_list(node3)
-print "New: "
-print_values(mutated)
+# puts "Reversing List With Stack"
+# print "Old: "
+# print_values(node5)
+# revlist = reverse_list(node5)
+# print "New: "
+# print_values(revlist)
+# puts "=========================="
+# puts "Reversing List Without Stack"
+# print "Old: "
+# print_values(node5)
+# mutated = mutate_list(node5)
+# print "New: "
+# print_values(mutated)
